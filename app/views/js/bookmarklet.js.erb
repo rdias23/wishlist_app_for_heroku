@@ -112,7 +112,7 @@
 
 				function send_data(product_info)
 				{
-					var domain = 'http://localhost:3000/add_wishlistitem?';
+					var domain = 'http://young-harbor-6978.herokuapp.com/add_wishlistitem?';
 					var url = domain + "title=" + encodeURIComponent(product_info.title) + "&image=" + encodeURIComponent(product_info.image) + "&price=" + encodeURIComponent(product_info.price) + "&link_url=" + encodeURIComponent(product_info.link_url);
 					
 					var script = document.createElement('script'); 
