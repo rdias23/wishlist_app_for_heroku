@@ -6,7 +6,7 @@ WishlistApp::Application.routes.draw do
   get "js/bookmarklet(.:format)" => "js#bookmarklet", :as => :bookmarklet
   get "/add_wishlistitem" => "wishlist#add_wishlistitem", as: :add_wishlistitem
   get "/:user_id" => "wishlist#show", as: :wishlist
-  delete "/wishlist/:id" => "wishlist#delete_wishlistitem", as: :delete_wishlistitem
+  get "/wishlist/:id" => "wishlist#delete_wishlistitem", as: :delete_wishlistitem
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
