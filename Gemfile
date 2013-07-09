@@ -47,3 +47,5 @@ end
 gem 'devise', '3.0.0.rc'
 
 gem 'jquery-rails'
+
+ruby '2.0.0'
