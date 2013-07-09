@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WishlistApp</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+<div id="user_nav">
+	  <% if user_signed_in? %>
+	    &nbsp &nbsp Signed in as <%= current_user.email %>. Not you?
+	    &nbsp &nbsp <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+	  <% else %>
+	    &nbsp &nbsp <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
+	  <% end %>
+
+          <% if current_user %>
+                <h3> Use the Wish List App to bookmark information about products from Amazon, J Crew, and Etsy</h3>
+		<span style="visibility: visible; text-decoration: underline"> <h4> ---------------------------> ONLY the Chrome web browser is fully supported for all three sites!!!!!!! Sorry. :( <--------------------------- </h4> </span>
+                        <a class="bookmarklet btn" href="javascript:(function () { var s = document.createElement('script'); s.setAttribute('language','javascript'); s.setAttribute('src','http://localhost:3000/js/bookmarklet.js'); document.body.appendChild(s);})()">Bookmark Item (Chrome ONLY)</a>
+                        <------------ Drag this bookmarklet into your <u> Chrome </u> web browser's toolbar
+        <% end %>
+
+<%= yield %>
+
+</body>
+</html>

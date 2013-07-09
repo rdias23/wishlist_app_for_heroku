@@ -1,0 +1,17 @@
+<%= div_for(@wishlistitems) do |wishlistitem| %>
+        <div class="wishlistitem-container">
+                <a href="<%= wishlistitem.url %>">
+                        <div class="wishlistitem-header">
+                                <h3><%= wishlistitem.title %></h3>
+                        </div>
+                </a>
+                <div class="wishlistitem-image">
+                        <img src="<%= wishlistitem.image %>"/>
+                </div>
+                <div class="wishlistitem-footer">
+                        <p>Price: $<%= wishlistitem.price %></p>
+                        <p>Saved At: <%= wishlistitem.created_at.in_time_zone('Eastern Time (US & Canada)') %> </p>
+                        <%= button_to 'Delete', delete_wishlistitem_path(wishlistitem.id), method: :delete, remote: true %>
+                </div>
+        </div>
+<% end %>
