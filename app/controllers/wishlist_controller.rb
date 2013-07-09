@@ -33,8 +33,5 @@ end
        @wishlistitem = Wishlistitem.find(params[:id])
          @wishlistitem.destroy
 
-         respond_to do |format|
-	      format.js
-         end
     end
 end
