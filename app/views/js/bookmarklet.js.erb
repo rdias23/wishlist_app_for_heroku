@@ -34,30 +34,29 @@
 
 			 	function get_etsy_product_info()
 			 	{
-
-						var title_span = document.getElementById("listing-page-cart-inner").getElementsByTagName("span");
-                                                var title = title_span[0].innerText;
-				 		var image_div = document.getElementById("image-0");
-						var image_tag = image_div.getElementsByTagName("img");
-						var image = image_tag[0].getAttribute("src");
-						var price_span = document.getElementById("listing-page-cart-inner").getElementsByClassName("currency-value");
-						var price = price_span[0].innerText;
-				 		var link_url = document.URL;
-						var product_info = {
-							title: title,
-							image: image,
-							price: price,
-							link_url: link_url
-						};
-				 		if (product_info)
-				 		{
-				 			console.log(product_info);
-				 			return product_info;
-				 		}
-				 		else
-				 		{
-				 	      		alert("Something went wrong!");
-				 		}
+					var title_span = document.getElementById("item-title").getElementsByTagName("span");
+                                        var title = title_span[0].innerText;
+                                        var image_div = document.getElementById("fullimage_link1");
+                                        var image_tag = image_div.getElementsByTagName("img");
+                                        var image = image_tag[0].getAttribute("src");                                                
+					var price_span = document.getElementById("content").getElementsByClassName("currency-value");
+                                        var price = price_span[0].innerText;
+                                        var link_url = document.URL;
+                                        var product_info = {
+                                                title: title,
+                                                image: image,
+                                                price: price,
+                                                link_url: link_url
+                                        };
+                                        if (product_info)
+                                        {
+                                                console.log(product_info);
+                                                return product_info;
+                                        }
+                                        else
+                                        {
+                                                alert("Something went wrong!");
+                                        }
 			 	}
 
 			 	function get_jcrew_product_info()
