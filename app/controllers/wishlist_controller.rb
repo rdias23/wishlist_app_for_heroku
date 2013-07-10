@@ -3,8 +3,7 @@ class WishlistController < ApplicationController
 
   def show
     @user = current_user
-    @wishlistitems_backwards = @user.wishlistitems
-    @wishlistitems = @wishlistitems_backwards.reverse
+    @wishlistitems = @user.wishlistitems
   end
 
   def add_wishlistitem
