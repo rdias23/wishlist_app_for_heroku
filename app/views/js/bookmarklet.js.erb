@@ -34,13 +34,13 @@
 
 			 	function get_etsy_product_info()
 			 	{
-					var title_span = document.getElementById("item-title").getElementsByTagName("span");
+			 		var title_span = document.getElementById("listing-page-cart-inner").getElementsByTagName("span");
                                         var title = title_span[0].innerText;
-                                        var image_div = document.getElementById("fullimage_link1");
+                                        var image_div = document.getElementById("image-main");
                                         var image_tag = image_div.getElementsByTagName("img");
-                                        var image = image_tag[0].getAttribute("src");                                                
-					var price_span = document.getElementById("content").getElementsByClassName("currency-value");
-                                        var price = price_span[4].innerText;
+                                        var image = image_tag[0].getAttribute("src");
+                                        var price_span = document.getElementById("listing-price").getElementsByClassName("currency-value");
+                                        var price = price_span[0].innerText;
                                         var link_url = document.URL;
                                         var product_info = {
                                                 title: title,
@@ -56,38 +56,39 @@
                                         else
                                         {
                                                 alert("Something went wrong!");
-                                        }
-			 	}
+                                        }	
+
+				}
 
 			 	function get_jcrew_product_info()
 			 	{
-			  		        var title_span = document.getElementById("productDetailsContainer");
-				 		var title = title_span.getElementsByTagName("h1")[0].innerText;
-						var image_div = document.getElementById("subContainer");
-				 		var image_tag = image_div.getElementsByTagName("img");
-				 		var image = image_tag[0].getAttribute("src");
-				 		var price_div = document.getElementById("productDetailsContainer");
-						var price_span = price_div.getElementsByClassName("full-price");
-					 	var price_with_dollar = price_span[0].innerText;
-					 	var price_with_possible_space = strip_dollar(price_with_dollar);				
-						var price = strip_space(price_with_possible_space);
-				 		var link_url = document.URL;
-						var product_info = {
-							title: title,
-							image: image,
-							price: price,
-							link_url: link_url
-						};
-				 		if (product_info.title = title)
-				 		{
-				 			return product_info;
-				 		}
-				 		else
-				 		{
-				 			console.log("No product_info object");
-				 			alert("Something went wrong!");
-				 			}
-			 	}
+			 		var title_span = document.getElementById("productDetailsContainer0");
+                                     	var title = title_span.getElementsByTagName("h1")[0].innerText;
+                                        var image_div = document.getElementById("subContainer");
+                                        var image_tag = image_div.getElementsByTagName("img");
+                                        var image = image_tag[0].getAttribute("src");
+                                        var price_div = document.getElementById("productDetailsContainer0");
+                                        var price_span = price_div.getElementsByClassName("full-price");
+                                        var price_with_dollar = price_span[0].innerText;
+                                        var price_with_possible_space = strip_dollar(price_with_dollar);
+                                        var price = strip_space(price_with_possible_space);
+                                        var link_url = document.URL;
+                                        var product_info = {
+                                                title: title,
+                                                image: image,
+                                                price: price,
+                                                link_url: link_url
+                                        };
+                                        if (product_info.title = title)
+                                        {
+                                                return product_info;
+                                        }
+                                        else
+                                        {
+                                                console.log("No product_info object");
+                                                alert("Something went wrong!");
+                                                }	
+				}
 
 			 	function determine_params() 
 				{
